@@ -7,7 +7,7 @@ var multer = require('multer');
 
 var storage = multer.diskStorage({
 	destination: (rea, file, cb) => {
-		cb(null, 'public/images');
+		cb(null, 'public/images/members');
 	},
 
 	// filename: (req, file, cb) => {
@@ -36,6 +36,9 @@ router.get('/', function(req, res, next) {
 	.then((members) => {
 		res.render('members', { title: 'Member List', members});
 	})
+	.catch((error) => {
+		next(error)
+	})
 });
 
 router.get('/registration', function(req, res, next){
@@ -49,6 +52,21 @@ router.post('/registration', upload.single('photo'), function(req, res, next) {
  		member.save()
  		res.redirect('/')
  	})
+ 	.catch((error) => {
+		next(error)
+	})
  });
+
+router.get('/:_id', function(req, res, next) {
+	Member.findOne(req.params)
+	.then((member) => {
+		res.send(member)
+	})
+	.catch((error) => {
+		next(error)
+	})
+});
+
+
 
 module.exports = router;
