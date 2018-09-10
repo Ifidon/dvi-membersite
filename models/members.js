@@ -5,9 +5,8 @@ var Schema = mongoose.Schema;
 
 
 var member = new Schema({
-	photo: {
-		data: Buffer,
-		contentType: String
+	photourl: {
+		type: String
 	},
 
 	fname: {
@@ -18,6 +17,10 @@ var member = new Schema({
 	lname: {
 		type: String,
 		required: true
+	},
+
+	role: {
+		type: String
 	},
 
 	bio: {

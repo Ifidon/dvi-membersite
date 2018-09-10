@@ -1,7 +1,29 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		div.container
+			div.row
+				nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.col-12
+					a.navbar-brand.col-3(href='/')
+						img(src='#' alt='Team Brand' width=100 height=100)
+					button.navbar-toggler(type='button' data-toggle='collapse' data-target='#menuDiv' aria-controls="menuDiv" aria-expanded="false" aria-label="Toggle navigation")
+						span.navbar-toggler-icon
+					div.collapse.navbar-collapse.col-9.h-100(id='menuDiv')
+						ul.navbar-nav.ml-auto.mt-auto
+							li.nav-item.mx-1
+								a.nav-link.mx-2(href='/') Home
+							li.nav-item.mx-1
+								a.nav-link.mx-2(href='/members') Members
+							li.nav-item.mx-1
+								a.nav-link.mx-2(href='/members/registration') Register
+			br
+			br
+
+		block content
+
+		script(src='/jquery/jquery.min.js')
+		script(src='/bootstrap/dist/js/bootstrap.min.js')

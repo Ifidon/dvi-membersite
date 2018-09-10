@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	div.container
+		h1.text-center Group Members
+		br
+		ul.list-group
+		each member in members
+			li.list-group-item.mx-auto
+				div.row
+					section.col-12.col-lg-2.my-auto
+						img.img-thumbnail(src="#{member.photourl}")
+					section.col-12.col-lg-4.my-auto.mx-auto
+						h5= member.fname + ' ' + member.lname
+						h6= member.role	
+					section.col-12.col-lg-2.my-auto.mx-auto
+						a.btn.btn-primary(href='/members/#{member._id}') View Bio
+
+
+div.row
+form(method='post' action='/uploads' enctype='multipart/form-data')
+	input(type='file' name='photo')
+		button(type='submit') Upload File

@@ -1,13 +1,36 @@
 extends layout
 
 block content
-	h1 Member Profiles
-
 	div.container
 		div.row
-			div.list-group
-				ol.row
-					li.list-group-item.mx-auto
-						img.col-4(src='#{member.photo.data}')
-						h4.col-6= member.firstname + ' ' + member.lastname
+			div.carousel.slide#carousel(data-ride='carousel')
+				ol.carousel-indicators
+					li.active(data-target='#carousel' data-slide-to='0')
+					li(data-target='#carousel' data-slide-to='1')
+					li(data-target='#carousel' data-slide-to='2')
+				div.carousel-inner
+					div.carousel-item.active
+						img.d-block.w-100(src='/images/carousel1.jpg' alt='first slide')
+						div.carousel-caption.d-none.d-md-block
+							h5 Caption Header
+							p Caption Body
+					
+					div.carousel-item
+						img.d-block.w-100(src='/images/carousel2.jpg' alt='Second Slide')
+						div.carousel-caption.d-none.d-md-block
+							h5 Caption Header
+							p Caption Body
 
+					div.carousel-item
+						img.d-block.w-100(src='/images/carousel3.jpg' alt='Third Slide')
+						div.carousel-caption.d-none.d-md-block
+							h5 Caption Header
+							p Caption Body
+
+					a.carousel-control-prev(href='#carousel' role='button' data-slide='prev')
+						span.carousel-control-prev-icon(aria-hidden='true')
+						span.sr-only Previous
+					a.carousel-control-next(href='#carousel' role='button' data-slide='next')
+						span.carousel-control-next-icon(aria-hidden='true')
+						span.sr-only Next
+		br
