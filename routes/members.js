@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/registration', function(req, res, next){
-	res.render('registration')
+	res.render('registration', {title: 'New Member Registration'})
 });
 
 router.post('/registration', upload.single('photo'), function(req, res, next) {

@@ -2,7 +2,6 @@ extends layout
 
 block content
 	div.container
-		div.row
 			div.carousel.slide#carousel(data-ride='carousel')
 				ol.carousel-indicators
 					li.active(data-target='#carousel' data-slide-to='0')
@@ -10,19 +9,19 @@ block content
 					li(data-target='#carousel' data-slide-to='2')
 				div.carousel-inner
 					div.carousel-item.active
-						img.d-block.w-100(src='/images/carousel1.jpg' alt='first slide')
+						img.d-block.w-100(src='/images/choir.jpg' alt='first slide')
 						div.carousel-caption.d-none.d-md-block
 							h5 Caption Header
 							p Caption Body
 					
 					div.carousel-item
-						img.d-block.w-100(src='/images/carousel2.jpg' alt='Second Slide')
+						img.d-block.w-100(src='/images/piano.jpg' alt='Second Slide')
 						div.carousel-caption.d-none.d-md-block
 							h5 Caption Header
 							p Caption Body
 
 					div.carousel-item
-						img.d-block.w-100(src='/images/carousel3.jpg' alt='Third Slide')
+						img.d-block.w-100(src='/images/church.jpg' alt='Third Slide')
 						div.carousel-caption.d-none.d-md-block
 							h5 Caption Header
 							p Caption Body
