@@ -2,7 +2,7 @@ extends layout
 
 block content
 	div.container
-		h1.text-center Group Members
+		h3.text-center#header
 		br
 		ul.list-group
 		each member in members
@@ -17,7 +17,14 @@ block content
 						a.btn.btn-primary(href='/members/#{member._id}') See Full Profile
 
 
-div.row
-form(method='post' action='/uploads' enctype='multipart/form-data')
-	input(type='file' name='photo')
-		button(type='submit') Upload File
+	script.
+		var header = document.getElementById('header')
+		var n = #{members.length}
+
+		if (n <= 0) {
+			console.log(n)
+			header.innerHTML = 'There are currently no members in this group'
+		}
+		else {
+			header.innerHTML = 'Group Members'
+		}
