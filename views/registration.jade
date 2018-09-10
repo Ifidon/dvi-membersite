@@ -1,0 +1,39 @@
+extends layout
+
+block content
+	div.container
+		div.row
+			div.form-group
+				form(method='post' action='/registration')
+					fieldset
+						legend Memeber Registration
+						br
+						input.form-control#image(type='file' name='photo' placeholder='Upload a photo' onchange='pritn()')
+						br
+						br
+
+						input.form-control(type='text' name='fname' placeholder='First Name')
+						br
+						br
+
+						input.form-control(type='text' name='lname' placeholder='Last Name')
+						br
+						br
+
+						textarea.form-control(cols=80 rows=20 name='bio' placeholder='Write a short Bio about yurself and your role i the group')
+						br
+						br
+
+						button(type='submit') Save
+
+
+						script.
+							console.log('ok')
+							var image = document.getElementById('image')
+
+							function pritn() {
+								console.log(image.value)
+							}
+
+							
+
