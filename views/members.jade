@@ -16,15 +16,7 @@ block content
 					section.col-12.col-lg-2.my-auto.mx-auto
 						a.btn.btn-primary(href='/members/#{member._id}') See Full Profile
 
+		script.
+			var n = #{members.length}
 
-	script.
-		var header = document.getElementById('header')
-		var n = #{members.length}
-
-		if (n <= 0) {
-			console.log(n)
-			header.innerHTML = 'There are currently no members in this group'
-		}
-		else {
-			header.innerHTML = 'Group Members'
-		}
+		script(src='/javascripts/members.js')
