@@ -7,7 +7,7 @@ var Member = require('../models/members');
 router.get('/', function(req, res, next) {
 	Member.find()
 	.then((members) => {
-		res.render('index', { title: 'GroupName', members});
+		res.render('index', { title: 'Dunamis Voice International', members});
 	})
 });
 

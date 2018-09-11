@@ -34,7 +34,7 @@ var upload = multer({
 router.get('/', function(req, res, next) {
 	Member.find()
 	.then((members) => {
-		res.render('members', { title: 'Member List', members});
+		res.render('members', { title: 'DVI - Members List', members});
 	})
 	.catch((error) => {
 		next(error)
@@ -42,7 +42,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/registration', function(req, res, next){
-	res.render('registration', {title: 'New Member Registration'})
+	res.render('registration', {title: 'DVI - New Member Registration'})
 });
 
 router.post('/registration', upload.single('photo'), function(req, res, next) {

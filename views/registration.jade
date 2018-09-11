@@ -3,28 +3,119 @@ extends layout
 block content
 	div.container
 		div.form-group
-			form.form-control(method='post' action='/members/registration' enctype='multipart/form-data')
+			h4.text-center.bg-light Member Registration
+			br
+			br
+
+			form.form-control.bg-light(method='post' action='/members/registration' enctype='multipart/form-data')
 				fieldset
-					legend.text-center Memeber Registration
-					br
-					input.form-control#image(type='file' name='photo' placeholder='Upload a photo')
+					legend.text-center Personal Information
+					hr
+
+					input.form-control#image.col-3(type='text' name='photo' placeholder='Upload a photo' onfocus="(this.type='file')")
 					br
 					br
 
-					input.form-control(type='text' name='fname' placeholder='First Name')
+					div.input-group
+
+						input.form-control.mr-1(type='text' name='fname' placeholder='First Name')
+
+						input.form-control.mx-1(type='text' name='lname' placeholder='Last Name')
+
+						input.form-control.ml-1(type='text' name='oname' placeholder='Other Name(s)')
 					br
 					br
 
-					input.form-control(type='text' name='lname' placeholder='Last Name')
+					div.input-group
+
+						input.form-control#dob.mr-1(type='text' name='dob' placeholder='Date of Birth' onfocus="(this.type='date')" onblur="(this.type='text')")
+
+						input.form-control.mx-1(type='text' name='phone' placeholder='Phone Number')
+
+						input.form-control.ml-1(type='text' name='occupation' placeholder='Occupation')
 					br
 					br
 
-					input.form-control(type='text' name='role' placeholder='Group Role')
+					div.input-group
+						textarea.form-control.mr-5(name='address.hone' placeholder='Home Address' rows=4)
+
+						textarea.form-control.ml-5(name='address.office' placeholder='Office/Business Address' rows=4)
 					br
 					br
 
-					textarea.form-control(rows=10 name='bio' placeholder='Write a short Bio about yurself and your role i the group')
+					div.input-group
+						input.form-control.mr-1(type='text' name='state' placeholder='State of Origin')
+
+						input.form-control.ml-1(type='text' name='lga' placeholder='Local Govt. Area')
+
+						input.form-control.ml-1(type='text' name='htown' placeholder='Hometown')
+					hr
 					br
 					br
 
-					button.btn.btn-primary.form-control(type='submit') Save
+				fieldset
+					legend.text-center Next of Kin Details
+					hr
+					div.input-group
+						input.form-control.mr-1(type='text' name='nok.name' placeholder='Next of Kin')
+
+						input.form-control.ml-1(type='text' name='nok.phone' placeholder='Phone Number of Next of Kin')
+					br
+
+					textarea.mx-1.form-control.col-6(name='nok.add' placeholder='Address of Next of Kin' rows=4)
+					br
+				hr
+				br
+				br
+
+				fieldset
+					legend.text-center Other Information
+
+					div.input-group
+						input.form-control.mr-1(type='text' name='questions.q1' placeholder='How long have you been in DIGC?')
+
+						input.form-control.mx-1(type='text' name='questions.q2' placeholder='Have you been in any other Dept. in DIGC?')
+
+						input.form-control.ml-1(type='text' name='questions.q3' placeholder='Please give reasons for leaving, if any')
+					br
+					br
+
+					div.input-group
+						input.form-control#badate.mr-1(type='text' name='dates.badate' placeholder='Date Born Again' onfocus="(this.type='date')" onblur="(this.type='text')")
+
+						input.form-control.ml-1#d1(type='text' name='dates.fcdate' placeholder='Date completed Foundation class' onfocus="(this.type='date')" onblur="(this.type='text')")
+
+						input.form-control.mx-1#d2(type='text' name='dates.mcdate' placeholder='Date completed Maturity class' onfocus="(this.type='date')" onblur="(this.type='text')")
+					br
+					br
+
+					div.input-group
+						input.form-control.mr-1#d3(type='text' name='dates.dvidate' placeholder='Date of joining DVI' onfocus="(this.type='date')" onblur="(this.type='text')")
+						input.form-control.ml-1(type='text' name='dviaim' placeholder='Reason for joining DVI')
+					br
+					br
+
+					div.input-group
+						input.form-control.mr-1(type='text' name='whistory.lpw' placeholder='Last place of worship before DIGC')
+						input.form-control.mx-1(type='text' name='whistory.lpwreason' placeholder='Reasons for leaving')
+					br
+					br
+
+					textarea.form-control(rows=5 name='addinfo' placeholder='Additional information')
+					br
+					br
+
+				button.btn.btn-primary.form-control(type='submit') Save
+
+
+				script.
+					console.log('OK')
+
+					var dob = document.getElementById('dob');
+					var d1 = document.getElementById('d1');
+					var d2 = document.getElementById('d2');
+					var d3 = document.getElementById('d3')
+
+					function changetype(){
+						this.type='date'
+					}

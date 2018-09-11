@@ -19,11 +19,64 @@ var member = new Schema({
 		required: true
 	},
 
-	role: {
+	dob: {
+		type: Date
+	},
+
+	phone: {
 		type: String
 	},
 
-	bio: {
+	occupation: {
+		type: String
+	},
+
+	address: {
+		home: String,
+		office: String
+	},
+
+	state: {
+		type: String
+	},
+
+	lga: {
+		type: String
+	},
+
+	htown: {
+		type: String
+	},
+
+	nok: {
+		name: String,
+		add: String,
+		phone: String
+	},
+
+	questions: {
+		q1: String,
+		q2: String,
+		q3: String
+	},
+
+	dates: {
+		badate: String,
+		fcdate: String,
+		mcdate: String,
+		dvidate: String
+	},
+
+	dvireason: {
+		type: String
+	},
+
+	whistory: {
+		lpw: String,
+		lpwreason: String
+	},
+
+	addinfo: {
 		type: String
 	} 
 }, {
