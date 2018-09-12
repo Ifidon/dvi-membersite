@@ -19,6 +19,10 @@ var member = new Schema({
 		required: true
 	},
 
+	oname: {
+		type: String
+	},
+
 	dob: {
 		type: Date
 	},
@@ -27,11 +31,15 @@ var member = new Schema({
 		type: String
 	},
 
+	role: {
+		type: String
+	},
+
 	occupation: {
 		type: String
 	},
 
-	address: {
+	addresses: {
 		home: String,
 		office: String
 	},
@@ -61,10 +69,10 @@ var member = new Schema({
 	},
 
 	dates: {
-		badate: String,
-		fcdate: String,
-		mcdate: String,
-		dvidate: String
+		badate: Date,
+		fcdate: Date,
+		mcdate: Date,
+		dvidate: Date
 	},
 
 	dvireason: {

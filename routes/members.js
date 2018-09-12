@@ -60,7 +60,7 @@ router.post('/registration', upload.single('photo'), function(req, res, next) {
 router.get('/:_id', function(req, res, next) {
 	Member.findOne(req.params)
 	.then((member) => {
-		res.send(member)
+		res.render('memberview', {member, title: "Profile: " + member.fname + " " + member.lname})
 	})
 	.catch((error) => {
 		next(error)

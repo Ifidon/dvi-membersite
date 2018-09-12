@@ -1,0 +1,153 @@
+extends layout
+
+block content
+	div.container
+		div.row
+			section.col-3
+				img.img-responsive(src='#{member.photourl}' height=200 width=200)
+			section.col-7.float-right
+				h3= member.fname + ' ' + member.lname
+				h6= "Choir Role: " + member.role
+				h6= "Date of Birth: " + member.dob.toString().slice(0, 15)
+				br
+
+				h6
+					i.fa.fa-phone
+					a.mx-2(href='tel: +2349012345678') 09012345678
+
+				h6
+					i.fa.fa-envelope
+					a.mx-2(href='mailto:sample@samplemail.com') sample@sampemail.com
+		br
+		br
+
+		div.row.border.p-3
+			h4.text-center.col-12.bg-info Contact Addresses
+			br
+			br
+
+			section.col-12.col-lg-5.border.bg-light.m-auto
+				p.bg-warning Home Address:
+				p #{member.addresses.home}
+
+			section.col-12.col-lg-5.m-auto.bg-light
+				p.text-left.text-lg-right.bg-warning Office Address:
+				p.text-left.text-lg-right #{member.addresses.office}
+		br
+		br
+
+		div.row.border.p-3
+			h4.text-center.col-12.bg-info State of Origin and Local Government Area
+			br
+			br
+
+			section.col-12.col-lg-3.bg-light.m-auto
+				p.text-left.text-lg-center.bg-warning State of Origin:
+				p.text-left.text-lg-center #{member.state}
+
+			section.col-12.col-lg-3.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Local Government Area:
+				p.text-left.text-lg-center #{member.lga}
+
+			section.col-12.col-lg-3.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Honetown:
+				p.text-left.text-lg-center #{member.htown}
+
+		br
+		br
+
+		div.row.border.p-3
+			h4.text-center.col-12.bg-info Next of Kin Information
+			br
+			br
+
+			section.col-12.col-lg-3.border.bg-light.m-auto
+				p.text-left.text-lg-center.bg-warning Full Name (Next of kin):
+				p.text-left.text-lg-center #{member.nok.name}
+
+			section.col-12.col-lg-3.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Contact Address (Next of kin):
+				p.text-left.text-lg-center #{member.nok.add}
+
+			section.col-12.col-lg-3.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Phone Number (Next of kin):
+				a.text-left.text-lg-center(href='tel: #{member.nok.phone}') #{member.nok.phone}
+		br
+		br
+
+		div.row.border.p-3
+			h4.text-center.col-12.bg-info Relevant Questions
+			br
+			br
+
+			section.col-12.col-lg-3.border.bg-light.m-auto
+				p.text-left.text-lg-center.bg-warning How long have you been in DIGC?:
+				p.text-left.text-lg-center #{member.questions.q1}
+
+			section.col-12.col-lg-3.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Are you in or Have you been in any other Dept. in DIGC apart form DVI?:
+				p.text-left.text-lg-center #{member.questions.q2}
+
+			section.col-12.col-lg-3.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Please give reasons for leaving, if applicable:
+				p.text-left.text-lg-center #{member.questions.q3}
+		br
+		br
+
+		div.row.border.p-3
+			h4.text-center.col-12.bg-info Important Dates
+			br
+			br
+
+			section.col-12.col-lg-3.border.bg-light.m-auto
+					p.text-left.text-lg-center.bg-warning Date Born Again:
+					p.text-left.text-lg-center= new Date(member.dates.badate).toString().slice(0, 16)
+
+				section.col-12.col-lg-3.m-auto.bg-light
+					p.text-left.text-lg-center.bg-warning Date completed Foundation class:
+					p.text-left.text-lg-center= new Date(member.dates.fcdate).toString().slice(0, 16)
+
+				section.col-12.col-lg-3.m-auto.bg-light
+					p.text-left.text-lg-center.bg-warning Date completed Maturity class:
+					p.text-left.text-lg-center=  new Date(member.dates.mcdate).toString().slice(0, 16)
+		br
+		br
+
+		div.row.border.p-3
+			h4.text-center.col-12.bg-info DIGC Membership Information
+			br
+			br
+
+			section.col-12.col-lg-2.border.bg-light.m-auto
+					p.text-left.text-lg-center.bg-warning Date of joining choir (DVI):
+					p.text-left.text-lg-center= new Date(member.dates.dvidate).toString().slice(0, 16)
+
+			section.col-12.col-lg-2.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Reason for joining choir:
+				p.text-left.text-lg-center= member.dvireason
+
+			section.col-12.col-lg-2.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Last Place of worship before DIGC:
+				p.text-left.text-lg-center= member.whistory.lpw
+
+			section.col-12.col-lg-2.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Reason for leaving:
+				p.text-left.text-lg-center= member.whistory.lpwreason
+
+		br
+		br
+
+		div.row
+			section.col-12.m-auto.bg-light
+				p.text-left.text-lg-center.bg-warning Additional Information:
+				p.text-left.text-lg-center= member.addinfo
+		br
+		br
+
+
+
+		div.row
+			section.col-6
+				button.btn.btn-primary(type='button' onclick='history.back()') Back
+			section.col-6
+				button.btn.btn-primary.float-right(type='button' onclick='print()') Print

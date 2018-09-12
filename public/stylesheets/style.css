@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: cursive;
 }
 
 a {
@@ -9,6 +10,14 @@ a {
 
 footer {
 	background-color: #34495E;
-	color: white;
+	color: #ffffff;
 	padding-bottom: 10px;
+	/*font-family: cursive;*/
+}
+
+legend {
+	padding: 3px;
+	background-color: #000000;
+	color: #ffffff;
+	/*font-family: cursive;*/
 }

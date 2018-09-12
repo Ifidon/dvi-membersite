@@ -32,14 +32,16 @@ block content
 
 						input.form-control.mx-1(type='text' name='phone' placeholder='Phone Number')
 
-						input.form-control.ml-1(type='text' name='occupation' placeholder='Occupation')
+						input.form-control.mx-1(type='text' name='occupation' placeholder='Occupation')
+
+						input.form-control.ml-1(type='text' name='role' placeholder='Role in Choir')
 					br
 					br
 
 					div.input-group
-						textarea.form-control.mr-5(name='address.hone' placeholder='Home Address' rows=4)
+						textarea.form-control.mr-5(name='addresses.home' placeholder='Home Address' rows=4)
 
-						textarea.form-control.ml-5(name='address.office' placeholder='Office/Business Address' rows=4)
+						textarea.form-control.ml-5(name='addresses.office' placeholder='Office/Business Address' rows=4)
 					br
 					br
 
@@ -74,7 +76,7 @@ block content
 					div.input-group
 						input.form-control.mr-1(type='text' name='questions.q1' placeholder='How long have you been in DIGC?')
 
-						input.form-control.mx-1(type='text' name='questions.q2' placeholder='Have you been in any other Dept. in DIGC?')
+						input.form-control.mx-1(type='text' name='questions.q2' placeholder='Are you in or Have you been in any other Dept. in DIGC apart form DVI?')
 
 						input.form-control.ml-1(type='text' name='questions.q3' placeholder='Please give reasons for leaving, if any')
 					br
@@ -90,8 +92,8 @@ block content
 					br
 
 					div.input-group
-						input.form-control.mr-1#d3(type='text' name='dates.dvidate' placeholder='Date of joining DVI' onfocus="(this.type='date')" onblur="(this.type='text')")
-						input.form-control.ml-1(type='text' name='dviaim' placeholder='Reason for joining DVI')
+						input.form-control.mr-1#d3(type='text' name='dates.dvidate' placeholder='Date of joining the choir (DVI)' onfocus="(this.type='date')" onblur="(this.type='text')")
+						input.form-control.ml-1(type='text' name='dvireason' placeholder='Reason for joining DVI')
 					br
 					br
 
@@ -106,16 +108,3 @@ block content
 					br
 
 				button.btn.btn-primary.form-control(type='submit') Save
-
-
-				script.
-					console.log('OK')
-
-					var dob = document.getElementById('dob');
-					var d1 = document.getElementById('d1');
-					var d2 = document.getElementById('d2');
-					var d3 = document.getElementById('d3')
-
-					function changetype(){
-						this.type='date'
-					}

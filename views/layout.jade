@@ -4,6 +4,7 @@ html
 		title= title
 		link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	body
 		div.container
 			div.row
@@ -13,10 +14,12 @@ html
 							img.img-thumbnail.navbar-brand(src='/images/logo.jpg' alt='Team Brand' width=100 height=100)
 					button.navbar-toggler(type='button' data-toggle='collapse' data-target='#menuDiv' aria-controls="menuDiv" aria-expanded="false" aria-label="Toggle navigation")
 						span.navbar-toggler-icon
-					div.collapse.navbar-collapse.col-9.h-100(id='menuDiv')
-						ul.navbar-nav.ml-auto.mt-auto
+					div.collapse.navbar-collapse.col-9.h-100.justify-content-end(id='menuDiv')
+						ul.navbar-nav.nav.nav-tabs.ml-auto.mt-auto
 							li.nav-item.mx-1
 								a.nav-link.mx-2(href='/') Home
+							li.nav-item.mx-1
+								a.nav-link.mx-2(href='/') About
 							li.nav-item.mx-1
 								a.nav-link.mx-2(href='/members') Members
 							li.nav-item.mx-1
@@ -34,29 +37,32 @@ html
 					em Contact Us
 			div.row
 				div.col-12.col-md-3.mx-auto
-					h6 
-						em Adress: 
+					h6
+						i.fa.fa-home
+						em  Adress: 
 					.line Address Line 1,
 					.line Address Line 2,
 					.line District,
 					.line City.
 				div.col-12.col-md-3.mx-auto
 					h6
-						em Phone: 
-					a(href='tel:+2349012345678') Tel:
+						i.fa.fa-phone
+						em  Phone: 
+					a(href='tel:+2349012345678') 09012345678
 				div.col-12.col-md-3.mx-auto
 					h6
-						em E-mail and Social Media
-					a(href='mailto:') email address	
-					.line whatsapp:
-					.line twitter:
+						i.fa.fa-envelope
+						em  E-mail and Social Media
+					a(href='mailto:') sample@samplemail.com	
+					.line Whatsapp:
+					.line Twitter:
 			br
 			div.row
 				p.text-center.col-12 &copy; 2018 Dunamis Voice International
 		br
 		br
 
-		p.text-center.bg-light Designd & Developed by 
+		p.text-center.bg-light 
 			strong Neftil Solutions&reg; -  
 			a(href='mailto: neftsngl@gmail.com') neftilsngl@gmail.com
 
