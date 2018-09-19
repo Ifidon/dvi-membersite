@@ -22,7 +22,7 @@ connect.then((db) => {
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var uploads = require('./routes/imageupload');
+// var uploads = require('./routes/imageupload');
 var members = require('./routes/members');
 
 var compression = require('compression');
@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/uploads', uploads);
+// app.use('/uploads', uploads);
 app.use('/members', members);
 
 // catch 404 and forward to error handler
