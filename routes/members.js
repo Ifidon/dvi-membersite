@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var Member = require('../models/members');
 
+var fs = require('fs');
+
 
 var multer = require('multer');
 
@@ -49,7 +51,7 @@ router.post('/registration', upload.single('photo'), function(req, res, next) {
  	Member.create(req.body)
  	.then((member) => {
  		member.set({"photourl": req.file.path.slice(6), photo: {
- 			data: req.file.path,
+ 			data: fs.readFileSync(req.file.path),
  			contentType: 'image/jpg'
  		}});
  		member.save()
