@@ -48,7 +48,10 @@ router.get('/registration', function(req, res, next){
 router.post('/registration', upload.single('photo'), function(req, res, next) {
  	Member.create(req.body)
  	.then((member) => {
- 		member.set({"photourl": req.file.path.slice(6)});
+ 		member.set({"photourl": req.file.path.slice(6), photo: {
+ 			data: req.file.path,
+ 			contentType: 'image/jpg'
+ 		}});
  		member.save()
  		res.redirect('/')
  	})

@@ -9,6 +9,11 @@ var member = new Schema({
 		type: String
 	},
 
+	photo: {
+		data: Buffer,
+		contentType: String
+	},
+
 	fname: {
 		type: String,
 		required: true
