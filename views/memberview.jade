@@ -4,11 +4,11 @@ block content
 	div.container
 		div.row
 			section.col-3
-				img.img-responsive(src=	"data:image/jpg;base64, #{member.photo.data.toString('base64')}" height=200 width=200)
+				img.img-responsive#memberphoto(src="data:image/jpg;base64, #{member.photo.data.toString('base64')}" height=200 width=200)
 			section.col-7.float-right
 				h3= member.fname + ' ' + member.lname
 				h6= "Choir Role: " + member.role
-				h6= "Date of Birth: " + member.dob.toString().slice(0, 15)
+				h6#dob= "Date of Birth: " + new Date(member.dob).toString().slice(0, 15)
 				br
 
 				h6
@@ -101,15 +101,15 @@ block content
 
 			section.col-12.col-lg-3.border.bg-light.m-auto
 					p.text-left.text-lg-center.bg-warning Date Born Again:
-					p.text-left.text-lg-center= new Date(member.dates.badate).toString().slice(0, 16)
+					p.text-left.text-lg-center#badate= new Date(member.dates.badate).toString().slice(0, 16)
 
 				section.col-12.col-lg-3.m-auto.bg-light
 					p.text-left.text-lg-center.bg-warning Date completed Foundation class:
-					p.text-left.text-lg-center= new Date(member.dates.fcdate).toString().slice(0, 16)
+					p.text-left.text-lg-center#fcdate= new Date(member.dates.fcdate).toString().slice(0, 16)
 
 				section.col-12.col-lg-3.m-auto.bg-light
 					p.text-left.text-lg-center.bg-warning Date completed Maturity class:
-					p.text-left.text-lg-center=  new Date(member.dates.mcdate).toString().slice(0, 16)
+					p.text-left.text-lg-center#mcdate=  new Date(member.dates.mcdate).toString().slice(0, 16)
 		br
 		br
 
@@ -120,7 +120,7 @@ block content
 
 			section.col-12.col-lg-2.border.bg-light.m-auto
 					p.text-left.text-lg-center.bg-warning Date of joining choir (DVI):
-					p.text-left.text-lg-center= new Date(member.dates.dvidate).toString().slice(0, 16)
+					p.text-left.text-lg-center#dvidate= new Date(member.dates.dvidate).toString().slice(0, 16)
 
 			section.col-12.col-lg-2.m-auto.bg-light
 				p.text-left.text-lg-center.bg-warning Reason for joining choir:
@@ -151,3 +151,38 @@ block content
 				button.btn.btn-primary(type='button' onclick='history.back()') Back
 			section.col-6
 				button.btn.btn-primary.float-right(type='button' onclick='print()') Print
+
+
+		script.
+			console.log('ok')
+
+			var db = document.getElementById('dob')
+			var ba = document.getElementById('badate')
+			var fc = document.getElementById('fcdate')
+			var mc = document.getElementById('mcdate')
+			var dvi = document.getElementById('dvidate')
+			var pic = document.getElementById('memberphoto')
+
+			if (#{member.dob == undefined}) {
+				db.innerHTML = "Date of Birth: "
+			}
+
+			if (#{member.badate == undefined}) {
+				badate.innerHTML = ""
+			}
+
+			if (#{member.fcdate == undefined}) {
+				fcdate.innerHTML = ""
+			}
+
+			if (#{member.mcdate == undefined}) {
+				mcdate.innerHTML = ""
+			}
+
+			if (#{member.dvidate == undefined}) {
+				dvidate.innerHTML = ""
+			}
+
+			if (#{member.photo.data == undefined}) {
+				pic.src = "/images/members/guitar.jpg"
+			}

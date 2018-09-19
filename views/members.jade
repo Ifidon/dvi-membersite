@@ -9,7 +9,7 @@ block content
 			li.list-group-item.mx-auto
 				div.row
 					section.col-12.col-lg-2.my-auto
-						img.img-thumbnail(src="data:image/jpg;base64, #{member.photo.data.toString('base64')}")
+						img.img-thumbnail#memberphoto(src="#")
 					section.col-12.col-lg-4.my-auto.mx-auto
 						h5= member.fname + ' ' + member.lname
 						h6= member.role	

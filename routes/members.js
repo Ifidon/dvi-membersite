@@ -50,11 +50,17 @@ router.get('/registration', function(req, res, next){
 router.post('/registration', upload.single('photo'), function(req, res, next) {
  	Member.create(req.body)
  	.then((member) => {
- 		member.set({"photourl": req.file.path.slice(6), photo: {
- 			data: fs.readFileSync(req.file.path),
- 			contentType: 'image/jpg'
- 		}});
- 		member.save()
+ 		if (req.file) {
+ 			member.set({"photourl": req.file.path.slice(6), photo: {
+ 				data: fs.readFileSync(req.file.path),
+ 				contentType: 'image/jpg'
+ 			}});
+ 			member.save()
+ 		}
+ 		else {
+ 			member.save()
+ 		} 		
+ 		
  		res.redirect('/')
  	})
  	.catch((error) => {

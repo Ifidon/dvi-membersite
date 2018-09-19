@@ -3,5 +3,10 @@ extends layout
 block content
 	div.container
 		div.row
+			h1.col-12 Something went wrong!!
+			p.col-12 Please contact your system administrator if this issue persists. Thank you.
+
+		div.row.d-none
 			h1= message
-			p Please contact your system administrator if this issue persists. Thank you.
+			h2= error.status
+			pre #{error.stack}
