@@ -4,7 +4,7 @@ block content
 	div.container
 		div.row
 			section.col-3
-				img.img-responsive(src='#{member.photourl}' height=200 width=200)
+				img.img-responsive(src=	"data:image/jpg;base64, #{member.photo.data.toString('base64')}" height=200 width=200)
 			section.col-7.float-right
 				h3= member.fname + ' ' + member.lname
 				h6= "Choir Role: " + member.role
