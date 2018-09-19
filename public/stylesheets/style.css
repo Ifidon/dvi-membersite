@@ -20,3 +20,7 @@ legend {
 	color: #ffffff;
 	/*font-family: cursive;*/
 }
+
+#carousel > div> div> img {
+	height: 450px;
+}
