@@ -9,6 +9,9 @@ router.get('/', function(req, res, next) {
 	.then((members) => {
 		res.render('index', { title: 'Dunamis Voice International', members});
 	})
+	.catch((error) => {
+		next(error)
+	})
 });
 
 
