@@ -6,12 +6,13 @@ var Schema = mongoose.Schema;
 
 var member = new Schema({
 	photourl: {
-		type: String
+		type: String,
+		// default: '/images/defaultuser.jpg'
 	},
 
 	photo: {
 		data: Buffer,
-		contentType: String
+		contentType: String,
 	},
 
 	fname: {

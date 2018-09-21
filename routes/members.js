@@ -54,11 +54,16 @@ router.post('/registration', upload.single('photo'), function(req, res, next) {
  			member.set({"photourl": req.file.path.slice(6), photo: {
  				data: fs.readFileSync(req.file.path),
  				contentType: 'image/jpg'
- 			}});
+ 			}}); 			
  			member.save()
  		}
  		else {
+ 				member.set({"photourl": './public/images/defaultuser.jpg', photo: {
+	 				data: fs.readFileSync('./public/images/defaultuser.jpg'),
+	 				contentType: 'image/jpg'
+ 				}});
  			member.save()
+ 			console.log(member)
  		} 		
  		
  		res.redirect('/')
